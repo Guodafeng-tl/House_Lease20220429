@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dafeng.dao.BookroomMapper">
+  <resultMap id="BaseResultMap" type="com.dafeng.bean.Bookroom">
+    <id column="bookroom_id" jdbcType="INTEGER" property="bookroomId" />
+    <result column="bookroom_date" jdbcType="TIMESTAMP" property="bookroomDate" />
+    <result column="house_id" jdbcType="INTEGER" property="houseId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    bookroom_id, bookroom_date, house_id, user_id
+  </sql>
+  <select id="selectByExample" parameterType="com.dafeng.bean.BookroomExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bookroom
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bookroom
+    where bookroom_id = #{bookroomId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bookroom
+    where bookroom_id = #{bookroomId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dafeng.bean.BookroomExample">
+    delete from bookroom
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dafeng.bean.Bookroom">
+    insert into bookroom (bookroom_id, bookroom_date, house_id, 
+      user_id)
+    values (#{bookroomId,jdbcType=INTEGER}, #{bookroomDate,jdbcType=TIMESTAMP}, #{houseId,jdbcType=INTEGER}, 
+      #{userId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dafeng.bean.Bookroom">
+    insert into bookroom
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookroomId != null">
+        bookroom_id,
+      </if>
+      <if test="bookroomDate != null">
+        bookroom_date,
+      </if>
+      <if test="houseId != null">
+        house_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookroomId != null">
+        #{bookroomId,jdbcType=INTEGER},
+      </if>
+      <if test="bookroomDate != null">
+        #{bookroomDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseId != null">
+        #{houseId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dafeng.bean.BookroomExample" resultType="java.lang.Long">
+    select count(*) from bookroom
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update bookroom
+    <set>
+      <if test="record.bookroomId != null">
+        bookroom_id = #{record.bookroomId,jdbcType=INTEGER},
+      </if>
+      <if test="record.bookroomDate != null">
+        bookroom_date = #{record.bookroomDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.houseId != null">
+        house_id = #{record.houseId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update bookroom
+    set bookroom_id = #{record.bookroomId,jdbcType=INTEGER},
+      bookroom_date = #{record.bookroomDate,jdbcType=TIMESTAMP},
+      house_id = #{record.houseId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dafeng.bean.Bookroom">
+    update bookroom
+    <set>
+      <if test="bookroomDate != null">
+        bookroom_date = #{bookroomDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="houseId != null">
+        house_id = #{houseId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where bookroom_id = #{bookroomId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dafeng.bean.Bookroom">
+    update bookroom
+    set bookroom_date = #{bookroomDate,jdbcType=TIMESTAMP},
+      house_id = #{houseId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER}
+    where bookroom_id = #{bookroomId,jdbcType=INTEGER}
+  </update>
+</mapper>

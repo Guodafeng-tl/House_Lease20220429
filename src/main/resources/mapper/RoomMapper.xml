@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dafeng.dao.RoomMapper">
+  <resultMap id="BaseResultMap" type="com.dafeng.bean.Room">
+    <id column="room_id" jdbcType="INTEGER" property="roomId" />
+    <result column="house_id" jdbcType="INTEGER" property="houseId" />
+    <result column="room_name" jdbcType="VARCHAR" property="roomName" />
+    <result column="room_area" jdbcType="INTEGER" property="roomArea" />
+    <result column="room_price" jdbcType="DECIMAL" property="roomPrice" />
+    <result column="room_exposure" jdbcType="VARCHAR" property="roomExposure" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    room_id, house_id, room_name, room_area, room_price, room_exposure
+  </sql>
+  <select id="selectByExample" parameterType="com.dafeng.bean.RoomExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from room
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from room
+    where room_id = #{roomId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from room
+    where room_id = #{roomId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dafeng.bean.RoomExample">
+    delete from room
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dafeng.bean.Room">
+    insert into room (room_id, house_id, room_name, 
+      room_area, room_price, room_exposure
+      )
+    values (#{roomId,jdbcType=INTEGER}, #{houseId,jdbcType=INTEGER}, #{roomName,jdbcType=VARCHAR}, 
+      #{roomArea,jdbcType=INTEGER}, #{roomPrice,jdbcType=DECIMAL}, #{roomExposure,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dafeng.bean.Room">
+    insert into room
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roomId != null">
+        room_id,
+      </if>
+      <if test="houseId != null">
+        house_id,
+      </if>
+      <if test="roomName != null">
+        room_name,
+      </if>
+      <if test="roomArea != null">
+        room_area,
+      </if>
+      <if test="roomPrice != null">
+        room_price,
+      </if>
+      <if test="roomExposure != null">
+        room_exposure,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roomId != null">
+        #{roomId,jdbcType=INTEGER},
+      </if>
+      <if test="houseId != null">
+        #{houseId,jdbcType=INTEGER},
+      </if>
+      <if test="roomName != null">
+        #{roomName,jdbcType=VARCHAR},
+      </if>
+      <if test="roomArea != null">
+        #{roomArea,jdbcType=INTEGER},
+      </if>
+      <if test="roomPrice != null">
+        #{roomPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="roomExposure != null">
+        #{roomExposure,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dafeng.bean.RoomExample" resultType="java.lang.Long">
+    select count(*) from room
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update room
+    <set>
+      <if test="record.roomId != null">
+        room_id = #{record.roomId,jdbcType=INTEGER},
+      </if>
+      <if test="record.houseId != null">
+        house_id = #{record.houseId,jdbcType=INTEGER},
+      </if>
+      <if test="record.roomName != null">
+        room_name = #{record.roomName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomArea != null">
+        room_area = #{record.roomArea,jdbcType=INTEGER},
+      </if>
+      <if test="record.roomPrice != null">
+        room_price = #{record.roomPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.roomExposure != null">
+        room_exposure = #{record.roomExposure,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update room
+    set room_id = #{record.roomId,jdbcType=INTEGER},
+      house_id = #{record.houseId,jdbcType=INTEGER},
+      room_name = #{record.roomName,jdbcType=VARCHAR},
+      room_area = #{record.roomArea,jdbcType=INTEGER},
+      room_price = #{record.roomPrice,jdbcType=DECIMAL},
+      room_exposure = #{record.roomExposure,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dafeng.bean.Room">
+    update room
+    <set>
+      <if test="houseId != null">
+        house_id = #{houseId,jdbcType=INTEGER},
+      </if>
+      <if test="roomName != null">
+        room_name = #{roomName,jdbcType=VARCHAR},
+      </if>
+      <if test="roomArea != null">
+        room_area = #{roomArea,jdbcType=INTEGER},
+      </if>
+      <if test="roomPrice != null">
+        room_price = #{roomPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="roomExposure != null">
+        room_exposure = #{roomExposure,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where room_id = #{roomId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dafeng.bean.Room">
+    update room
+    set house_id = #{houseId,jdbcType=INTEGER},
+      room_name = #{roomName,jdbcType=VARCHAR},
+      room_area = #{roomArea,jdbcType=INTEGER},
+      room_price = #{roomPrice,jdbcType=DECIMAL},
+      room_exposure = #{roomExposure,jdbcType=VARCHAR}
+    where room_id = #{roomId,jdbcType=INTEGER}
+  </update>
+</mapper>

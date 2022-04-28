@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="House_Lease:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ff0bb677-e4db-4510-83d9-e9e0af9e2e47" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1sNiRAvClzhAldddBsTDWljh26M" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_House_Lease" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50869" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.34437087" />
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff0bb677-e4db-4510-83d9-e9e0af9e2e47" name="Default Changelist" comment="" />
+      <created>1620719436906</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620719436906</updated>
+      <workItem from="1620719441045" duration="2446000" />
+      <workItem from="1620782138116" duration="1107000" />
+      <workItem from="1620797096007" duration="1837000" />
+      <workItem from="1620815180591" duration="327000" />
+      <workItem from="1620884245043" duration="2481000" />
+      <workItem from="1621214677495" duration="247000" />
+      <workItem from="1621221628153" duration="315000" />
+      <workItem from="1621228709898" duration="1693000" />
+      <workItem from="1621319599001" duration="9000" />
+      <workItem from="1621320039068" duration="193000" />
+      <workItem from="1621329187948" duration="17000" />
+      <workItem from="1627453301579" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621235723692">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1621235723692" />
+    <state x="322" y="0" width="650" height="680" key="#tomcat8" timestamp="1621235635544">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="322" y="0" width="650" height="680" key="#tomcat8/0.0.1280.680@0.0.1280.680" timestamp="1621235635544" />
+    <state width="1237" height="-12" key="GridCell.Tab.0.bottom" timestamp="1621236935877">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="-12" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1621236935877" />
+    <state width="1237" height="-12" key="GridCell.Tab.0.center" timestamp="1621236935877">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="-12" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1621236935877" />
+    <state width="1237" height="-12" key="GridCell.Tab.0.left" timestamp="1621236935877">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="-12" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1621236935877" />
+    <state width="1237" height="-12" key="GridCell.Tab.0.right" timestamp="1621236935877">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="-12" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1621236935877" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1621235552353">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1621235552353" />
+  </component>
+</project>
